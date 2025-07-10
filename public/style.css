@@ -1,0 +1,106 @@
+   * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #e5ddd5;
+    }
+
+    .chat-container {
+      max-width: 600px;
+      margin: 40px auto;
+      background-color: #f0f0f0;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .chat-header {
+      background-color: #075e54;
+      color: white;
+      padding: 15px;
+      font-size: 20px;
+    }
+
+    .chat-messages {
+      background-image: url('bg.jpg');
+      background-size: cover;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .chat-box {
+      display: flex;
+      flex-direction: column;
+      max-width: 70%;
+      padding: 10px 15px;
+      border-radius: 10px;
+    }
+
+    .chat-box:nth-child(odd){
+        align-self: flex-start;
+        background-color: white;
+    }
+
+    .chat-box:nth-child(even){
+        align-self: flex-end;
+        background-color: white;
+    }
+
+    .chat-box p {
+      margin: 3px 0;
+      word-break: break-word;
+    }
+
+    .from {
+      align-self: flex-start;
+      background-color: white;
+    }
+
+    .to {
+      align-self: flex-end;
+      background-color: #dcf8c6;
+    }
+
+    .new-btn{
+     padding: 10px 15px;
+     font-size: 1rem;
+     background-color: #0a5e07;
+     border-radius: 10px;
+     color: white;
+     position: relative;
+     left: 25rem;
+     cursor: pointer;
+     border: 1px solid white;
+    }
+
+     .edit-btn {
+      padding: 2px;
+      text-decoration: none;
+      border: 1px solid black;
+      border-radius: 5px;
+      background-color: #25d366;
+      color: black;
+    }
+
+    .edit-btn:hover {
+      background-color: #1db954;
+    }
+
+    .delete-btn {
+      padding: 2px;
+      text-decoration: none;
+      border: 1px solid black;
+      border-radius: 5px;
+      background-color: #f44336;
+      color: black;
+    }
+
+    .delete-btn:hover {
+      background-color: #d32f2f;
+    }

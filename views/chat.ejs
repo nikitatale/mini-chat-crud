@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>All Chats</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="chat-container">
+  <div class="chat-header">All Chats
+    <a href="/chats/new"><button class="new-btn">+</button></a>
+  </div>
+  <div class="chat-messages">
+    <% for(let item of chats) { %> 
+      <div class="chat-box from">
+        <p>from: <strong><%= item.from %></strong></p>
+        <p><%= item.message %></p>
+        <p style="text-align: right;">to: <strong><%= item.to %></strong></p>
+          <div>
+            <a href="/chats/<%= item._id %>/edit" class="edit-btn">Edit ✏️</a>
+            <a href="/chats/<%= item._id %>/delete" class="delete-btn" onclick="confirmDelete(event, '<%= item._id %>')">Delete 🗑️</a>
+          </div>
+          <hr>
+       <% if(item.created_at) {%>
+         <p style="font-size: 12px;"><%= item.created_at.toLocaleString('en-IN', {hour: '2-digit', minute: '2-digit'})%></p>
+        <p style="font-size: 12px;"><%= item.created_at.toString().split(" ").slice(0, 4).join(" ") %></p>
+       <% } %>
+      </div>
+    <% } %>
+  </div>
+</div>
+</body>
+
+<script>
+    function confirmDelete(event, id) {
+      event.preventDefault();
+      const confirmAction = confirm("Are you sure you want to delete this message?");
+      if (confirmAction) {
+        window.location.href = `/chats/${id}/delete`;
+      }
+    }
+  </script>
+</html>
